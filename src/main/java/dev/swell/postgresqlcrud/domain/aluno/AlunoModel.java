@@ -1,17 +1,25 @@
-package dev.swell.postgresqlcrud.domain;
+package dev.swell.postgresqlcrud.domain.aluno;
 
 import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleLongProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 
-import java.util.Collections;
-import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 import java.util.stream.Stream;
 
 public class AlunoModel {
 
     private final AlunoData data;
+    private final SimpleObjectProperty<Long> id = new SimpleObjectProperty<>(null);
+
+    public Long getId() {
+        return id.get();
+    }
+
+    public SimpleObjectProperty<Long> idProperty() {
+        return id;
+    }
 
     private final SimpleStringProperty nome = new SimpleStringProperty();
     private final SimpleDoubleProperty nota1 = new SimpleDoubleProperty(0.0);
@@ -84,6 +92,11 @@ public class AlunoModel {
         populateData();
     }
 
+    public AlunoModel(Long id, String nome, Double nota1, Double nota2, Double nota3, Double nota4) {
+        this(new AlunoData(nome, nota1, nota2, nota3, nota4));
+        this.id.set(id);
+    }
+
     private void populateData() {
         nome.set(data.nome());
         nota1.set(data.nota1());
@@ -100,11 +113,6 @@ public class AlunoModel {
         return Situacao.REPROVADO;
     }
 
-    /**
-     * Calcula a média das notas do aluno excluíndo a menor nota
-     *
-     * @return Double
-     */
 
     public Double menorNota() {
         return Math.min(Math.min(data.nota1(), data.nota2()), Math.min(data.nota3(), data.nota4()));
@@ -120,8 +128,7 @@ public class AlunoModel {
     }
 
     private Double calcularMedia() {
-        var soma = DoubleStream.of(data.nota1(), data.nota2(), data.nota3(), data.nota4()).sum();
-        return (soma - menorNota()) / 3.0;
+        return ((data.nota1() + data.nota2() + data.nota3() + data.nota4()) - menorNota()) / 3.0;
 
     }
 

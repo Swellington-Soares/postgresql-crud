@@ -1,4 +1,4 @@
-package dev.swell.postgresqlcrud.domain;
+package dev.swell.postgresqlcrud.domain.aluno;
 
 public record AlunoData(
         String nome,

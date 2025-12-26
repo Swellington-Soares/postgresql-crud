@@ -1,0 +1,5 @@
+.table-cell.menor-nota {
+    -fx-background-color: #ffe0e0;
+    -fx-text-fill: #900;
+    -fx-font-weight: bold;
+}
