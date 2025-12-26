@@ -1,0 +1,17 @@
+hibernate:
+  connection:
+    url: jdbc:postgresql://localhost:5432/curso_db
+    username: devuser
+    password: dev1234
+  show_sql: true
+  format_sql: true
+  highlight_sql: true
+  hbm2ddl:
+    auto: create
+
+jakarta:
+  persistence:
+    jdbc:
+      url: ${hibernate.connection.url}
+      user: ${hibernate.connection.username}
+      password: ${hibernate.connection.password}
