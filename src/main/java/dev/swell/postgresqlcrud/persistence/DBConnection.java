@@ -1,4 +1,4 @@
-package dev.swell.postgresqlcrud.persistance;
+package dev.swell.postgresqlcrud.persistence;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;

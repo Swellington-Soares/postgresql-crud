@@ -1,6 +1,6 @@
 package dev.swell.postgresqlcrud.domain.aluno;
 
-import dev.swell.postgresqlcrud.persistance.CrudRepository;
+import dev.swell.postgresqlcrud.persistence.CrudRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 

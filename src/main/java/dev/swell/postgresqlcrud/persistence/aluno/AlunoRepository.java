@@ -1,13 +1,12 @@
-package dev.swell.postgresqlcrud.persistance.aluno;
+package dev.swell.postgresqlcrud.persistence.aluno;
 
 import dev.swell.postgresqlcrud.domain.aluno.AlunoEntity;
-import dev.swell.postgresqlcrud.persistance.CrudRepository;
-import dev.swell.postgresqlcrud.persistance.DBConnection;
+import dev.swell.postgresqlcrud.persistence.CrudRepository;
+import dev.swell.postgresqlcrud.persistence.DBConnection;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import org.hibernate.Session;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class AlunoRepository implements CrudRepository<AlunoEntity> {

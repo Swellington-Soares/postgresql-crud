@@ -1,7 +1,6 @@
 package dev.swell.postgresqlcrud;
 
-import dev.swell.postgresqlcrud.persistance.DBConnection;
-import jakarta.persistence.Query;
+import dev.swell.postgresqlcrud.persistence.DBConnection;
 import javafx.application.Application;
 
 public class Launcher {
